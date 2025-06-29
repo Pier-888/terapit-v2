@@ -11,6 +11,7 @@ import { MessagesPage } from './pages/MessagesPage';
 import { BookingPage } from './pages/BookingPage';
 import { QuestionnaireePage } from './pages/QuestionnaireePage';
 import { TherapySelectionPage } from './pages/TherapySelectionPage';
+import { RegistrationPage } from './pages/RegistrationPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/registration" element={<RegistrationPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/therapist/:id" element={<TherapistProfilePage />} />
             <Route path="/matching" element={<MatchingPage />} />

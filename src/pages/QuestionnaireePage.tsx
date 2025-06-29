@@ -722,9 +722,14 @@ export const QuestionnaireePage: React.FC = () => {
       setCurrentStep(currentStep + 1);
     } else {
       setIsCompleted(true);
-      // Simulate processing time
+      // Reindirizza alla pagina di registrazione con i dati del questionario
       setTimeout(() => {
-        navigate('/matching');
+        navigate('/registration', {
+          state: {
+            therapyType: type,
+            answers: answers
+          }
+        });
       }, 2000);
     }
   };
@@ -770,7 +775,7 @@ export const QuestionnaireePage: React.FC = () => {
             Questionario Completato!
           </h2>
           <p className="text-gray-600 mb-6">
-            Stiamo elaborando le tue risposte per {therapyInfo.title.toLowerCase()} e trovando i 3 terapeuti più compatibili con te...
+            Perfetto! Ora completa la registrazione per ricevere i tuoi 3 match personalizzati per {therapyInfo.title.toLowerCase()}.
           </p>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <motion.div 
