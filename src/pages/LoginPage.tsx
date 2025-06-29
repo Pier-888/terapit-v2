@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useAuth } from '../contexts/AuthContext';
-import { Heart, Mail, Lock, Eye, EyeOff } from 'lucide-react';
+import { Heart, Mail, Lock, Eye, EyeOff, Target } from 'lucide-react';
 
 export const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -46,9 +46,10 @@ export const LoginPage: React.FC = () => {
           </Link>
           <h2 className="text-3xl font-bold text-gray-900">Accedi al tuo account</h2>
           <p className="mt-2 text-gray-600">
-            Non hai un account?{' '}
-            <Link to="/register" className="text-teal-600 hover:text-teal-500 font-medium">
-              Registrati qui
+            Non hai ancora completato il questionario?{' '}
+            <Link to="/therapy-selection" className="text-teal-600 hover:text-teal-500 font-medium inline-flex items-center">
+              <Target className="w-4 h-4 mr-1" />
+              Inizia qui
             </Link>
           </p>
         </div>
@@ -187,9 +188,9 @@ export const LoginPage: React.FC = () => {
         <div className="text-center">
           <p className="text-sm text-gray-600">
             Sei un professionista?{' '}
-            <Link to="/register" className="text-teal-600 hover:text-teal-500 font-medium">
-              Registrati come terapeuta
-            </Link>
+            <a href="#" className="text-teal-600 hover:text-teal-500 font-medium">
+              Contattaci per unirti alla piattaforma
+            </a>
           </p>
         </div>
       </motion.div>

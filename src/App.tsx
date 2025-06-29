@@ -4,7 +4,6 @@ import { AuthProvider } from './contexts/AuthContext';
 import { Layout } from './components/Layout';
 import { HomePage } from './pages/HomePage';
 import { LoginPage } from './pages/LoginPage';
-import { RegisterPage } from './pages/RegisterPage';
 import { DashboardPage } from './pages/DashboardPage';
 import { TherapistProfilePage } from './pages/TherapistProfilePage';
 import { MatchingPage } from './pages/MatchingPage';
@@ -21,7 +20,6 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/therapist/:id" element={<TherapistProfilePage />} />
             <Route path="/matching" element={<MatchingPage />} />
