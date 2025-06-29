@@ -74,27 +74,22 @@ export const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Sunset Mountain */}
-      <section className="relative anime-bg-hero py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Cherry Petals */}
-        <div className="cherry-petals">
-          {[...Array(9)].map((_, i) => (
-            <div key={i} className="cherry-petal"></div>
-          ))}
-        </div>
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-teal-50 via-white to-blue-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2314b8a6" fill-opacity="0.03"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-40"></div>
         
-        <div className="relative max-w-7xl mx-auto z-10">
+        <div className="relative max-w-7xl mx-auto">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-lg">
-                Trova il <span className="text-yellow-200">Match Terapeutico</span><br />
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Trova il <span className="text-teal-600">Match Terapeutico</span><br />
                 Perfetto per Te
               </h1>
-              <p className="text-xl text-white text-opacity-90 mb-8 max-w-3xl mx-auto drop-shadow">
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
                 Completa il nostro questionario scientifico e ricevi 3 consulenze gratuite con i 
                 terapeuti più adatti a te. Nessuna ricerca, nessuna pressione - solo il match perfetto.
               </p>
@@ -108,7 +103,7 @@ export const HomePage: React.FC = () => {
             >
               <Link
                 to="/therapy-selection"
-                className="bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center"
+                className="bg-teal-600 text-white px-8 py-4 rounded-lg hover:bg-teal-700 transition-colors font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center justify-center"
               >
                 <Target className="w-6 h-6 mr-2" />
                 Inizia il Questionario
@@ -116,21 +111,21 @@ export const HomePage: React.FC = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-wrap justify-center items-center gap-8 text-sm text-white text-opacity-80"
+              className="flex flex-wrap justify-center items-center gap-8 text-sm text-gray-500"
             >
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-yellow-200" />
+                <CheckCircle className="w-5 h-5 text-teal-600" />
                 <span>Oltre 500+ psicologi verificati</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-yellow-200" />
+                <CheckCircle className="w-5 h-5 text-teal-600" />
                 <span>Consulenza gratuita di 30 min</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-yellow-200" />
+                <CheckCircle className="w-5 h-5 text-teal-600" />
                 <span>Privacy e sicurezza garantite</span>
               </div>
             </motion.div>
@@ -138,14 +133,14 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Scegli il Tuo Percorso Section - Aurora Forest */}
-      <section className="anime-bg-selection py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
+      {/* Scegli il Tuo Percorso Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Scegli il Tuo Percorso
             </h2>
-            <p className="text-xl text-white text-opacity-90 max-w-3xl mx-auto drop-shadow">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Ogni tipo di terapia ha un questionario specifico per garantire il match più accurato
             </p>
           </div>
@@ -162,7 +157,7 @@ export const HomePage: React.FC = () => {
               >
                 <Link
                   to={`/questionnaire/${type.id}`}
-                  className={`block bg-gradient-to-br ${type.gradient} text-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 backdrop-blur-sm bg-opacity-90`}
+                  className={`block bg-gradient-to-br ${type.gradient} text-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2`}
                 >
                   <div className="text-center">
                     <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -182,14 +177,14 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Come Funziona Section - Misty Mountains */}
-      <section className="anime-bg-features py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
+      {/* Come Funziona Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Come Funziona Terapit
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Un processo semplice e scientifico per trovare il terapeuta giusto per te, senza 
               stress o incertezze.
             </p>
@@ -203,22 +198,22 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white bg-opacity-80 backdrop-blur-sm p-6 rounded-xl shadow-lg"
+                className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow"
               >
                 <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <feature.icon className="w-8 h-8 text-teal-600" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Il Tuo Percorso Section - Cherry Blossom */}
-      <section className="anime-bg-process py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
+      {/* Il Tuo Percorso Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Il Tuo Percorso in 4 Semplici Passi
@@ -254,27 +249,30 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white bg-opacity-90 backdrop-blur-sm p-6 rounded-xl shadow-lg"
+                className="text-center"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-orange-500 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6 shadow-lg">
+                <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                {index < 3 && (
+                  <div className="hidden md:block absolute top-6 left-1/2 transform translate-x-6 w-full h-0.5 bg-teal-200"></div>
+                )}
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section - Night Sky */}
-      <section className="anime-bg-testimonials py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Cosa Dicono di Noi
             </h2>
-            <p className="text-xl text-white text-opacity-90 drop-shadow">
+            <p className="text-xl text-gray-600">
               Le esperienze di pazienti e terapeuti che hanno scelto Terapit
             </p>
           </div>
@@ -287,7 +285,7 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-white bg-opacity-90 backdrop-blur-sm p-6 rounded-xl shadow-lg"
+                className="bg-gray-50 p-6 rounded-xl"
               >
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -312,24 +310,24 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section - Sunset Ocean */}
-      <section className="anime-bg-cta py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-teal-600 to-blue-600">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Pronto a Trovare il Tuo Match Perfetto?
             </h2>
-            <p className="text-xl text-white text-opacity-90 mb-8 drop-shadow">
+            <p className="text-xl text-teal-100 mb-8">
               Inizia con il questionario gratuito e ricevi 3 consulenze gratuite con i terapeuti più adatti a te
             </p>
             <Link
               to="/therapy-selection"
-              className="bg-white text-orange-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg inline-block shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+              className="bg-white text-teal-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg inline-block shadow-lg hover:shadow-xl transform hover:-translate-y-1"
             >
               <Target className="w-6 h-6 inline mr-2" />
               Inizia il Questionario

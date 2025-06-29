@@ -30,31 +30,31 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen anime-bg-login flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-md w-full space-y-8 relative z-10"
+        className="max-w-md w-full space-y-8"
       >
         <div className="text-center">
           <Link to="/" className="flex items-center space-x-2 justify-center mb-6">
-            <div className="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center backdrop-blur-sm">
+            <div className="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg flex items-center justify-center">
               <Heart className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-bold text-white drop-shadow-lg">Terapit</span>
+            <span className="text-2xl font-bold text-gray-900">Terapit</span>
           </Link>
-          <h2 className="text-3xl font-bold text-white drop-shadow-lg">Accedi al tuo account</h2>
-          <p className="mt-2 text-white text-opacity-90 drop-shadow">
+          <h2 className="text-3xl font-bold text-gray-900">Accedi al tuo account</h2>
+          <p className="mt-2 text-gray-600">
             Non hai ancora completato il questionario?{' '}
-            <Link to="/therapy-selection" className="text-yellow-200 hover:text-yellow-100 font-medium inline-flex items-center">
+            <Link to="/therapy-selection" className="text-teal-600 hover:text-teal-500 font-medium inline-flex items-center">
               <Target className="w-4 h-4 mr-1" />
               Inizia qui
             </Link>
           </p>
         </div>
 
-        <div className="bg-white bg-opacity-95 backdrop-blur-sm py-8 px-6 shadow-xl rounded-xl">
+        <div className="bg-white py-8 px-6 shadow-xl rounded-xl">
           <form className="space-y-6" onSubmit={handleSubmit}>
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
@@ -186,9 +186,9 @@ export const LoginPage: React.FC = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-sm text-white text-opacity-80 drop-shadow">
+          <p className="text-sm text-gray-600">
             Sei un professionista?{' '}
-            <a href="#" className="text-yellow-200 hover:text-yellow-100 font-medium">
+            <a href="#" className="text-teal-600 hover:text-teal-500 font-medium">
               Contattaci per unirti alla piattaforma
             </a>
           </p>
