@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Heart, Users, MessageCircle, Calendar, Star, Shield, CheckCircle, FileText, Brain, Target, User, Baby } from 'lucide-react';
+import { AnimeBackground } from '../components/animations';
 
 export const HomePage: React.FC = () => {
   const features = [
@@ -72,19 +73,13 @@ export const HomePage: React.FC = () => {
     }
   ];
 
-  // SVG background pattern as a variable to avoid JSX parsing issues
-  const svgBackgroundPattern = `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2314b8a6' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`;
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-50 via-white to-blue-50 py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div 
-          className="absolute inset-0 opacity-40"
-          style={{ backgroundImage: svgBackgroundPattern }}
-        ></div>
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <AnimeBackground variant="ambient" />
         
-        <div className="relative max-w-7xl mx-auto">
+        <div className="relative max-w-7xl mx-auto z-10">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -140,8 +135,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Scegli il Tuo Percorso Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <AnimeBackground variant="leaves" />
+        
+        <div className="relative max-w-7xl mx-auto z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Scegli il Tuo Percorso
@@ -184,8 +181,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Come Funziona Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <AnimeBackground variant="stream" />
+        
+        <div className="relative max-w-7xl mx-auto z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Come Funziona Terapit
@@ -204,7 +203,7 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow"
+                className="text-center p-6 rounded-xl hover:shadow-lg transition-shadow bg-white bg-opacity-80 backdrop-blur-sm"
               >
                 <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <feature.icon className="w-8 h-8 text-teal-600" />
@@ -218,8 +217,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Il Tuo Percorso Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <AnimeBackground variant="ambient" />
+        
+        <div className="relative max-w-7xl mx-auto z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Il Tuo Percorso in 4 Semplici Passi
@@ -255,16 +256,13 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center"
+                className="text-center bg-white bg-opacity-80 backdrop-blur-sm p-6 rounded-xl"
               >
                 <div className="w-12 h-12 bg-teal-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
                   {item.step}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-6 left-1/2 transform translate-x-6 w-full h-0.5 bg-teal-200"></div>
-                )}
               </motion.div>
             ))}
           </div>
@@ -272,8 +270,10 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <AnimeBackground variant="leaves" />
+        
+        <div className="relative max-w-7xl mx-auto z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Cosa Dicono di Noi
@@ -291,7 +291,7 @@ export const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-gray-50 p-6 rounded-xl"
+                className="bg-white bg-opacity-90 backdrop-blur-sm p-6 rounded-xl shadow-lg"
               >
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -317,15 +317,18 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-teal-600 to-blue-600">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <AnimeBackground variant="all" />
+        
+        <div className="relative max-w-4xl mx-auto text-center z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
+            className="bg-gradient-to-r from-teal-600 to-blue-600 p-12 rounded-2xl text-white shadow-2xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Pronto a Trovare il Tuo Match Perfetto?
             </h2>
             <p className="text-xl text-teal-100 mb-8">
