@@ -120,12 +120,12 @@ export const BookingPage: React.FC = () => {
 
   if (isBookingComplete) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 flex items-center justify-center px-4">
+      <div className="min-h-screen anime-bg-booking flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-center bg-white p-8 rounded-2xl shadow-xl max-w-md w-full"
+          className="text-center bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-md w-full"
         >
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Check className="w-8 h-8 text-green-600" />
@@ -158,8 +158,8 @@ export const BookingPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen anime-bg-booking py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Progress Steps */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -172,8 +172,8 @@ export const BookingPage: React.FC = () => {
               <div key={step.number} className="flex items-center">
                 <div className={`flex items-center justify-center w-10 h-10 rounded-full border-2 ${
                   currentStep >= step.number
-                    ? 'bg-teal-600 border-teal-600 text-white'
-                    : 'bg-white border-gray-300 text-gray-500'
+                    ? 'bg-white border-white text-orange-600'
+                    : 'bg-white bg-opacity-20 border-white border-opacity-50 text-white'
                 }`}>
                   {currentStep > step.number ? (
                     <Check className="w-5 h-5" />
@@ -183,15 +183,15 @@ export const BookingPage: React.FC = () => {
                 </div>
                 <div className="ml-3 hidden sm:block">
                   <p className={`text-sm font-medium ${
-                    currentStep >= step.number ? 'text-teal-600' : 'text-gray-500'
-                  }`}>
+                    currentStep >= step.number ? 'text-white' : 'text-white text-opacity-70'
+                  } drop-shadow`}>
                     {step.title}
                   </p>
-                  <p className="text-xs text-gray-500">{step.description}</p>
+                  <p className="text-xs text-white text-opacity-60 drop-shadow">{step.description}</p>
                 </div>
                 {index < steps.length - 1 && (
                   <div className={`hidden sm:block w-16 h-0.5 ml-6 ${
-                    currentStep > step.number ? 'bg-teal-600' : 'bg-gray-300'
+                    currentStep > step.number ? 'bg-white' : 'bg-white bg-opacity-30'
                   }`} />
                 )}
               </div>
@@ -206,7 +206,7 @@ export const BookingPage: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.4 }}
-          className="bg-white rounded-2xl shadow-lg p-8"
+          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8"
         >
           {/* Step 1: Select Therapist */}
           {currentStep === 1 && (

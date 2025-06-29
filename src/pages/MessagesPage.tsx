@@ -149,13 +149,13 @@ export const MessagesPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="min-h-screen anime-bg-messages">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-lg overflow-hidden"
+          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl overflow-hidden"
           style={{ height: 'calc(100vh - 200px)' }}
         >
           <div className="flex h-full">
@@ -287,7 +287,7 @@ export const MessagesPage: React.FC = () => {
                   <div className="p-6 border-t border-gray-200">
                     <div className="flex items-end space-x-2">
                       <button className="p-2 text-gray-400 hover:text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
-                        <Paperclip className="w-5 h-5" />
+                        <Paper clip className="w-5 h-5" />
                       </button>
                       <div className="flex-1">
                         <textarea

@@ -98,11 +98,11 @@ export const MatchingPage: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 flex items-center justify-center px-4">
+      <div className="min-h-screen anime-bg-matching flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="text-center bg-white p-8 rounded-2xl shadow-xl max-w-md w-full"
+          className="text-center bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-md w-full"
         >
           <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <Heart className="w-8 h-8 text-teal-600 animate-pulse" />
@@ -145,8 +145,8 @@ export const MatchingPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen anime-bg-matching py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -154,13 +154,13 @@ export const MatchingPage: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Heart className="w-8 h-8 text-teal-600" />
+          <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <Heart className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
             I Tuoi 3 Match Perfetti
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-white text-opacity-90 max-w-2xl mx-auto drop-shadow">
             Basandoci sulle tue risposte, abbiamo selezionato questi terapeuti altamente compatibili. 
             Prenota una consulenza gratuita di 30 minuti con ognuno.
           </p>
@@ -174,10 +174,10 @@ export const MatchingPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`bg-white rounded-2xl shadow-lg border-2 transition-all duration-300 ${
+              className={`bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl border-2 transition-all duration-300 ${
                 selectedTherapists.includes(therapist.id)
-                  ? 'border-teal-500 shadow-xl'
-                  : 'border-gray-200 hover:border-teal-300 hover:shadow-lg'
+                  ? 'border-teal-500 shadow-2xl'
+                  : 'border-white border-opacity-20 hover:border-teal-300 hover:shadow-2xl'
               }`}
             >
               <div className="p-8">
@@ -300,7 +300,7 @@ export const MatchingPage: React.FC = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-2xl shadow-lg p-8 text-center"
+            className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8 text-center"
           >
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Hai selezionato {selectedTherapists.length} terapeut{selectedTherapists.length === 1 ? 'a' : 'i'}
@@ -319,11 +319,11 @@ export const MatchingPage: React.FC = () => {
         )}
 
         {selectedTherapists.length === 0 && (
-          <div className="bg-teal-50 rounded-2xl p-8 text-center">
-            <h3 className="text-xl font-semibold text-teal-900 mb-2">
+          <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-8 text-center">
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
               Seleziona i terapeuti che ti interessano
             </h3>
-            <p className="text-teal-700">
+            <p className="text-gray-700">
               Puoi scegliere fino a 3 professionisti per le consulenze gratuite
             </p>
           </div>

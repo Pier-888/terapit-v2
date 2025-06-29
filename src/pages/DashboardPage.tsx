@@ -8,8 +8,8 @@ export const DashboardPage: React.FC = () => {
 
   if (!user) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen anime-bg-dashboard flex items-center justify-center">
+        <div className="text-center bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-2xl shadow-xl">
           <p className="text-gray-600">Devi essere autenticato per accedere alla dashboard.</p>
         </div>
       </div>
@@ -17,8 +17,10 @@ export const DashboardPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {user.role === 'patient' ? <PatientDashboard /> : <TherapistDashboard />}
+    <div className="min-h-screen anime-bg-dashboard">
+      <div className="relative z-10">
+        {user.role === 'patient' ? <PatientDashboard /> : <TherapistDashboard />}
+      </div>
     </div>
   );
 };

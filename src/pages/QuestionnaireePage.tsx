@@ -659,17 +659,20 @@ const therapyTypeInfo = {
   individual: {
     title: 'Terapia Individuale',
     icon: Users,
-    color: 'from-teal-500 to-blue-600'
+    color: 'from-teal-500 to-blue-600',
+    bgClass: 'anime-bg-questionnaire-individual'
   },
   couple: {
     title: 'Terapia di Coppia',
     icon: Heart,
-    color: 'from-pink-500 to-rose-600'
+    color: 'from-pink-500 to-rose-600',
+    bgClass: 'anime-bg-questionnaire-couple'
   },
   child: {
     title: 'Psicologia Infantile',
     icon: Star,
-    color: 'from-purple-500 to-indigo-600'
+    color: 'from-purple-500 to-indigo-600',
+    bgClass: 'anime-bg-questionnaire-child'
   }
 };
 
@@ -756,12 +759,12 @@ export const QuestionnaireePage: React.FC = () => {
 
   if (isCompleted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 flex items-center justify-center px-4">
+      <div className={`min-h-screen ${therapyInfo.bgClass} flex items-center justify-center px-4`}>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-center bg-white p-8 rounded-2xl shadow-xl max-w-md w-full"
+          className="text-center bg-white bg-opacity-95 backdrop-blur-sm p-8 rounded-2xl shadow-xl max-w-md w-full"
         >
           <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <CheckCircle className="w-8 h-8 text-green-600" />
@@ -786,24 +789,24 @@ export const QuestionnaireePage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-2xl mx-auto">
+    <div className={`min-h-screen ${therapyInfo.bgClass} py-12 px-4 sm:px-6 lg:px-8`}>
+      <div className="max-w-2xl mx-auto relative z-10">
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-medium text-white drop-shadow">
               {therapyInfo.title} - Domanda {currentStep + 1} di {questions.length}
             </span>
-            <span className="text-sm font-medium text-teal-600">
+            <span className="text-sm font-medium text-white drop-shadow">
               {Math.round(progress)}% completato
             </span>
           </div>
-          <div className="w-full bg-gray-200 rounded-full h-2">
+          <div className="w-full bg-white bg-opacity-30 rounded-full h-2">
             <motion.div 
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
-              className="bg-teal-600 h-2 rounded-full"
+              className="bg-white h-2 rounded-full shadow-lg"
             />
           </div>
         </div>
@@ -815,7 +818,7 @@ export const QuestionnaireePage: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -20 }}
           transition={{ duration: 0.4 }}
-          className="bg-white rounded-2xl shadow-xl p-8"
+          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl p-8"
         >
           {currentQuestion && (
             <div>
@@ -990,7 +993,7 @@ export const QuestionnaireePage: React.FC = () => {
 
         {/* Optional indicator */}
         {currentQuestion && !currentQuestion.required && (
-          <p className="text-center text-sm text-gray-500 mt-4">
+          <p className="text-center text-sm text-white text-opacity-80 mt-4 drop-shadow">
             Questa domanda è opzionale - puoi saltarla se preferisci
           </p>
         )}

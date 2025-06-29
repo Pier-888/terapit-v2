@@ -47,8 +47,8 @@ export const TherapySelectionPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen anime-bg-selection py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,10 +56,10 @@ export const TherapySelectionPage: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg">
             Che tipo di supporto stai cercando?
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-white text-opacity-90 max-w-3xl mx-auto drop-shadow">
             Seleziona il tipo di terapia più adatto alle tue esigenze. Ti guideremo verso i 
             professionisti specializzati nel tuo ambito.
           </p>
@@ -73,7 +73,7 @@ export const TherapySelectionPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow"
+              className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl border border-white border-opacity-20 overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
               <div className={`bg-gradient-to-br ${type.gradient} p-8 text-white text-center`}>
                 <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -110,7 +110,7 @@ export const TherapySelectionPage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 text-center"
+          className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl shadow-xl border border-white border-opacity-20 p-8 text-center"
         >
           <div className="max-w-2xl mx-auto">
             <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
