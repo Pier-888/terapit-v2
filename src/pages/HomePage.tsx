@@ -603,30 +603,6 @@ export const HomePage: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Success Rate Banner */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-green-500 to-teal-600 rounded-2xl p-8 text-center text-white"
-          >
-            <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-12 h-12 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold mb-4">Il Nostro Tasso di Successo</h3>
-            <div className="text-6xl font-bold mb-4">94%</div>
-            <p className="text-xl text-green-100 mb-6">
-              dei nostri clienti trova il terapeuta giusto al primo o secondo 3 consulenze gratuite
-            </p>
-            <Link
-              to="/therapy-selection"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <Target className="w-6 h-6 mr-2" />
-              Inizia il Tuo Match Scientifico
-            </Link>
-          </motion.div>
         </div>
       </section>
 
